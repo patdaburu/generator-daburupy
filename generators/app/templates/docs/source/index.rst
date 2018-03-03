@@ -1,15 +1,14 @@
-.. djio documentation master file, created by
-   sphinx-quickstart on Thu Oct 12 15:57:17 2017.
+.. <%= projectName %> documentation master file
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
 .. image:: _static/images/logo.svg
    :width: 150px
-   :alt: djio
+   :alt: <%= projectName %>
    :align: right
 
-djio: Another GIS Toolkit
-=========================
+Project Documentation
+=====================
 
 .. toctree::
    :maxdepth: 2
@@ -17,8 +16,6 @@ djio: Another GIS Toolkit
 
    api
    requirements
-   development
-
 
 
 Indices and tables
