@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Pat Daburu",
+      "authorEmail": "pat@daburu.net",
+      "authorUrl": "https://www.daburu.net"
+    }
+  }
+}
