@@ -61,18 +61,59 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    ['Makefile', 'README', 'README.md', 'setup.cfg', 'setup.py'].forEach(
+    [
+      'Makefile',
+      'requirements.txt',
+      'README',
+      'README.md',
+      'setup.cfg',
+      'setup.py',
+      'package.json',
+      '.coveragerc',
+      '.readthedocs.yml',
+      'environment.yml'
+    ].forEach(
       function(f) {
         this.fs.copyTpl(this.templatePath(f), this.destinationPath(f), this.props);
       }.bind(this)
     );
-    // Create the project directory.
-    //this.fs.makeDir(this.props.projectName);
     // Copy the project directory templates.
     ['__init__.py'].forEach(
       function(f) {
         var src = path.join('_project', f);
-        var dest = path.join(this.props.projectName, f)
+        var dest = path.join(this.props.projectName, f);
+        this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
+      }.bind(this)
+    );
+    // Copy the unit test files.
+    ['test_example.py'].forEach(
+      function(f) {
+        var src = path.join('tests', f);
+        var dest = path.join('tests', f);
+        this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
+      }.bind(this)
+    );
+    // Copy the root doc files.
+    ['Makefile', 'make.bat'].forEach(
+      function(f) {
+        var src = path.join('docs', f);
+        var dest = path.join('docs', f);
+        this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
+      }.bind(this)
+    );
+    // Copy the doc source files.
+    ['api.rst', 'conf.py', 'index.rst', 'requirements.rst'].forEach(
+      function(f) {
+        var src = path.join('docs', 'source', f);
+        var dest = path.join('docs', 'source', f);
+        this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
+      }.bind(this)
+    );
+    // Copy the doc static image files.
+    ['logo.svg'].forEach(
+      function(f) {
+        var src = path.join('docs', 'source', '_static', 'images', f);
+        var dest = path.join('docs', 'source', '_static', 'images', f);
         this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
       }.bind(this)
     );

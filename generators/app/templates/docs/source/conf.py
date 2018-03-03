@@ -104,8 +104,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = '<%= projectName %>'
-copyright = '2018, <%= projectAuthor %>'
-author = ' <%= projectAuthor %>'
+copyright = '2018, <%= authorName %>'
+author = ' <%= authorName %>'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -200,7 +200,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, '<%= projectName %>.tex', '<%= projectName %> Documentation',
-     '<%= projectAuthor %>', 'manual'),
+     '<%= authorName %>', 'manual'),
 ]
 
 

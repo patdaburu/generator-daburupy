@@ -1,0 +1,9 @@
+build:
+    image: latest
+
+python:
+    version: <%= projectVersion %>
+    setup_py_install: true
+
+conda:
+    file: environment.yml
