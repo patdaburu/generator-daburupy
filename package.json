@@ -1,6 +1,6 @@
 {
   "name": "generator-daburupy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "This is a generator for a basic python project.",
   "homepage": "https://www.daburu.net",
   "author": {
@@ -8,15 +8,9 @@
     "email": "pat@daburu.net",
     "url": "https://www.daburu.net"
   },
-  "files": [
-    "generators"
-  ],
+  "files": ["generators"],
   "main": "generators/index.js",
-  "keywords": [
-    "python",
-    "sphinx",
-    "yeoman-generator"
-  ],
+  "keywords": ["python", "sphinx", "yeoman-generator"],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
     "yeoman-assert": "^3.1.0",
@@ -46,20 +40,11 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"]
   },
   "eslintConfig": {
-    "extends": [
-      "xo",
-      "prettier"
-    ],
+    "extends": ["xo", "prettier"],
     "env": {
       "jest": true,
       "node": true
@@ -73,9 +58,7 @@
         }
       ]
     },
-    "plugins": [
-      "prettier"
-    ]
+    "plugins": ["prettier"]
   },
   "repository": "patdaburu/generator-daburupy",
   "license": "MIT"
