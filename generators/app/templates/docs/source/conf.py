@@ -104,7 +104,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = '<%= projectName %>'
-copyright = '2018, <%= authorName %>'
+copyright = '<%= year %>, <%= authorName %>'
 author = ' <%= authorName %>'
 
 # The version info for the project you're documenting, acts as replacement for

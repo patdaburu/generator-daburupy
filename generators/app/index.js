@@ -66,7 +66,11 @@ module.exports = class extends Generator {
 
   writing() {
     // Create supplemental properties.
-    const otherProps = { year: new Date().getFullYear() };
+    const otherProps = {
+      year: new Date().getFullYear(),
+      uleq: '='.repeat(this.props.projectName.length),
+      uldash: '-'.repeat(this.props.projectName.length)
+    };
     // Create the files at the root of the project.
     [
       'Makefile',
