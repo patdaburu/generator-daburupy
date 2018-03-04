@@ -6,6 +6,9 @@
 API Documentation
 =================
 
+<%= uldash %>
+<%= projectName %>
+<%= uldash %>
 .. automodule:: <%= projectName %>
     :members:
     :undoc-members:

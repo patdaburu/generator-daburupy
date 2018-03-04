@@ -8,7 +8,11 @@ module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
     this.log(
-      yosay(`Welcome to the awesome ${chalk.red('generator-daburupy')} generator!`)
+      yosay(
+        `${chalk.red(
+          'generator-daburupy'
+        )} will help you get this python project started!`
+      )
     );
 
     const prompts = [
@@ -61,6 +65,13 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    // Create supplemental properties.
+    const otherProps = {
+      year: new Date().getFullYear(),
+      uleq: '='.repeat(this.props.projectName.length),
+      uldash: '-'.repeat(this.props.projectName.length)
+    };
+    // Create the files at the root of the project.
     [
       'Makefile',
       'requirements.txt',
@@ -80,40 +91,44 @@ module.exports = class extends Generator {
     // Copy the project directory templates.
     ['__init__.py'].forEach(
       function(f) {
-        var src = path.join('_project', f);
-        var dest = path.join(this.props.projectName, f);
+        const src = path.join('_project', f);
+        const dest = path.join(this.props.projectName, f);
         this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
       }.bind(this)
     );
     // Copy the unit test files.
     ['test_example.py'].forEach(
       function(f) {
-        var src = path.join('tests', f);
-        var dest = path.join('tests', f);
+        const src = path.join('tests', f);
+        const dest = path.join('tests', f);
         this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
       }.bind(this)
     );
     // Copy the root doc files.
     ['Makefile', 'make.bat'].forEach(
       function(f) {
-        var src = path.join('docs', f);
-        var dest = path.join('docs', f);
+        const src = path.join('docs', f);
+        const dest = path.join('docs', f);
         this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
       }.bind(this)
     );
     // Copy the doc source files.
     ['api.rst', 'conf.py', 'index.rst', 'requirements.rst'].forEach(
       function(f) {
-        var src = path.join('docs', 'source', f);
-        var dest = path.join('docs', 'source', f);
-        this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
+        const src = path.join('docs', 'source', f);
+        const dest = path.join('docs', 'source', f);
+        this.fs.copyTpl(
+          this.templatePath(src),
+          this.destinationPath(dest),
+          Object.assign({}, this.props, otherProps)
+        );
       }.bind(this)
     );
     // Copy the doc static image files.
     ['logo.svg'].forEach(
       function(f) {
-        var src = path.join('docs', 'source', '_static', 'images', f);
-        var dest = path.join('docs', 'source', '_static', 'images', f);
+        const src = path.join('docs', 'source', '_static', 'images', f);
+        const dest = path.join('docs', 'source', '_static', 'images', f);
         this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
       }.bind(this)
     );

@@ -1,12 +1,12 @@
 {
   "name": "generator-daburupy",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "This is a generator for a basic python project.",
-  "homepage": "https://www.daburu.net",
+  "homepage": "https://github.com/patdaburu/generator-daburupy",
   "author": {
     "name": "Pat Daburu",
     "email": "pat@daburu.net",
-    "url": "https://www.daburu.net"
+    "url": "https://github.com/patdaburu/generator-daburupy"
   },
   "files": ["generators"],
   "main": "generators/index.js",
@@ -26,8 +26,8 @@
     "jest": "^22.0.6"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
+    "yeoman-generator": "^2.0.1",
     "yosay": "^2.0.1"
   },
   "jest": {

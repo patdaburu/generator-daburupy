@@ -7,8 +7,10 @@
    :alt: <%= projectName %>
    :align: right
 
-Project Documentation
-=====================
+<%= projectName %>
+<%= uleq %>
+
+<%= projectDescription %>
 
 .. toctree::
    :maxdepth: 2

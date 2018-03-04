@@ -11,6 +11,17 @@ describe('generator-daburupy:app', () => {
   });
 
   it('creates files', () => {
-    assert.file(['dummyfile.txt']);
+    assert.file(['Makefile']);
+    assert.file(['requirements.txt']);
+    assert.file(['README']);
+    assert.file(['README.md']);
+    assert.file(['setup.cfg']);
+    assert.file(['setup.py']);
+    assert.file(['package.json']);
+    assert.file(['.coveragerc']);
+    assert.file(['.readthedocs.yml']);
+    assert.file(['environment.yml']);
+    assert.file([path.join('docs', 'Makefile')]);
+    assert.file([path.join('docs', 'make.bat')]);
   });
 });
