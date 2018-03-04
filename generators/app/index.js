@@ -65,6 +65,9 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    // Create supplemental properties.
+    const otherProps = { year: new Date().getFullYear() };
+    // Create the files at the root of the project.
     [
       'Makefile',
       'requirements.txt',
@@ -110,7 +113,11 @@ module.exports = class extends Generator {
       function(f) {
         const src = path.join('docs', 'source', f);
         const dest = path.join('docs', 'source', f);
-        this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
+        this.fs.copyTpl(
+          this.templatePath(src),
+          this.destinationPath(dest),
+          Object.assign({}, this.props, otherProps)
+        );
       }.bind(this)
     );
     // Copy the doc static image files.
