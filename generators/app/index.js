@@ -82,7 +82,8 @@ module.exports = class extends Generator {
       'package.json',
       '.coveragerc',
       '.readthedocs.yml',
-      'environment.yml'
+      'environment.yml',
+      '.gitignore'
     ].forEach(
       function(f) {
         this.fs.copyTpl(this.templatePath(f), this.destinationPath(f), this.props);
