@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-.. currentmodule:: __init__.py
+.. currentmodule:: <%= projectName %>
 .. moduleauthor:: <%= authorName %> <<%= authorEmail %>>
 
 <%= projectDescription %>
