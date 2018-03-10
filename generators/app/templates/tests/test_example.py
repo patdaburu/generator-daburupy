@@ -37,8 +37,8 @@ class ParamaterizedExampleTestSuite(unittest.TestCase):
     third parameter.
     """
     @parameterized.expand([
-        [1, 2, 5],
-        [3, 4, 25]
+        (1, 2, 5),
+        (3, 4, 25)
     ])
     def test_ab_addSquares_equalsC(self, a, b, c):
         """
