@@ -5,6 +5,10 @@ If you haven't used yeoman templates before, take a look at the [Getting Started
 
 ## Get ready, get set...
 
+### Install `npm`
+If you haven't already installed [npm](https://www.npmjs.com/get-npm), you'll need to do that first. 
+
+### Install `yeoman`
 If you haven't already installed  [Yeoman](http://yeoman.io/learning/), perform the following steps:
 
 ```bash
