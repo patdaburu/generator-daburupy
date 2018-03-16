@@ -1,0 +1,9 @@
+{
+  "name": "<%= projectName %>",
+  "authors": ["<%= authorName %> <<%= authorEmail %>>"],
+  "description": "<%= projectDescription %>",
+  "main": "index.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"]
+}
