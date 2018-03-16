@@ -83,10 +83,16 @@ module.exports = class extends Generator {
       '.coveragerc',
       '.readthedocs.yml',
       'environment.yml',
-      '.gitignore'
+      'bower.json'
     ].forEach(
       function(f) {
         this.fs.copyTpl(this.templatePath(f), this.destinationPath(f), this.props);
+      }.bind(this)
+    );
+    // Copy the special files (like .gitignore) which might be ignored for packaging.
+    ['gitignore'].forEach(
+      function(f) {
+        this.fs.copyTpl(this.templatePath(f), this.destinationPath('.' + f), this.props);
       }.bind(this)
     );
     // Copy the project directory templates.

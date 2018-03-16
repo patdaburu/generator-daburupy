@@ -21,7 +21,7 @@ class ExampleTestSuite(unittest.TestCase):
     """
     def test_import_getVersions_originalVersions(self):
         """
-        Arrange: Load the djio module.
+        Arrange: Load the primary module.
         Act: Retrieve the versions.
         Assert: The versions match the version numbers at the time of project creation.
         """
