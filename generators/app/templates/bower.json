@@ -3,7 +3,7 @@
   "authors": ["<%= authorName %> <<%= authorEmail %>>"],
   "description": "<%= projectDescription %>",
   "main": "index.js",
-  "license": "MIT",
+  "license": "<%= license %>",
   "homepage": "",
   "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"]
 }

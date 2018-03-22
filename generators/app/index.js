@@ -51,6 +51,13 @@ module.exports = class extends Generator {
         message: "What is the author's email address?"
       },
       {
+        type: 'list',
+        name: 'license',
+        message: 'Under what license will the project be published',
+        choices: ['None', 'MIT'],
+        default: 'None'
+      },
+      {
         type: 'input',
         name: 'githubUser',
         message: 'What is the name of your github user?',
@@ -139,9 +146,31 @@ module.exports = class extends Generator {
         this.fs.copyTpl(this.templatePath(src), this.destinationPath(dest), this.props);
       }.bind(this)
     );
+    // Copy the license file.
+    const license = path.join('_licenses', this.props.license);
+    this.fs.copyTpl(
+      this.templatePath(license),
+      this.destinationPath('LICENSE'),
+      Object.assign({}, this.props, otherProps)
+    );
   }
 
   install() {
     this.installDependencies();
+  }
+
+  end() {
+    // Have Yeoman greet the user.
+    this.log(
+      yosay(
+        `${chalk.green(
+          'Ready to go!'
+        )} You can get started by running the commands below.  Have fun!`
+      )
+    );
+    this.log(`${chalk.green('make venv')}`);
+    this.log(`${chalk.green('source venv/bin/activate')}`);
+    this.log(`${chalk.green('make install')}`);
+    this.log(`${chalk.green('make make build')}`);
   }
 };
