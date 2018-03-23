@@ -41,7 +41,7 @@ setup(
     # 'measurement>=1.8.0,<2'
   ],
   python_requires=">=<%= pythonVersion %>",
-  license='<%= license %>',
+  <%= pyIfLicense %>license='<%= license %>',
   author='<%= authorName %>',
   author_email='<%= authorEmail %>',
   url='http://<%= projectName %>.readthedocs.io/en/latest/index.html',  # Use the URL to the github repo.
@@ -62,7 +62,7 @@ setup(
     'Topic :: Software Development :: Libraries',
 
     # Pick your license as you wish (should match "license" above)
-    #'License :: OSI Approved :: MIT License',
+    <%= pyIfLicense %>'License :: OSI Approved :: <%= license %> License',
 
     # Specify the Python versions you support here. In particular, ensure
     # that you indicate whether you support Python 2, Python 3 or both.

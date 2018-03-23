@@ -76,7 +76,8 @@ module.exports = class extends Generator {
     const otherProps = {
       year: new Date().getFullYear(),
       uleq: '='.repeat(this.props.projectName.length),
-      uldash: '-'.repeat(this.props.projectName.length)
+      uldash: '-'.repeat(this.props.projectName.length),
+      pyIfLicense: this.props.license === 'None' ? '# ' : ''
     };
     // Create the files at the root of the project.
     [
@@ -93,7 +94,11 @@ module.exports = class extends Generator {
       'bower.json'
     ].forEach(
       function(f) {
-        this.fs.copyTpl(this.templatePath(f), this.destinationPath(f), this.props);
+        this.fs.copyTpl(
+          this.templatePath(f),
+          this.destinationPath(f),
+          Object.assign({}, this.props, otherProps)
+        );
       }.bind(this)
     );
     // Copy the special files (like .gitignore) which might be ignored for packaging.
