@@ -72,7 +72,8 @@ MOCK_MODULES = [
     'matplotlib.pyplot',
     'scipy.interpolate',
     'scipy.special',
-    'math'
+    'math',
+    'pandas'
 ]
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 
