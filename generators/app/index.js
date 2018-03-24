@@ -176,6 +176,6 @@ module.exports = class extends Generator {
     this.log(`${chalk.green('make venv')}`);
     this.log(`${chalk.green('source venv/bin/activate')}`);
     this.log(`${chalk.green('make install')}`);
-    this.log(`${chalk.green('make make build')}`);
+    this.log(`${chalk.green('make build')}`);
   }
 };
