@@ -2,7 +2,7 @@ build:
     image: latest
 
 python:
-    version: <%= projectVersion %>
+    version: <%= pythonVersion %>
     setup_py_install: true
 
 conda:
