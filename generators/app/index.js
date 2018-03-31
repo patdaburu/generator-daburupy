@@ -173,9 +173,7 @@ module.exports = class extends Generator {
         )} You can get started by running the commands below.  Have fun!`
       )
     );
-    this.log(`${chalk.green('make venv')}`);
+    this.log(`${chalk.green('make setup')}`);
     this.log(`${chalk.green('source venv/bin/activate')}`);
-    this.log(`${chalk.green('make install')}`);
-    this.log(`${chalk.green('make build')}`);
   }
 };
