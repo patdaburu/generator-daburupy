@@ -20,7 +20,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'projectName',
         message: 'What is the name of your project?',
-        default: this.appname // Default to the project's folder name if the input is skipped.
+        default: this.appname.replace(/\W/gi, '_') // Default to the project's folder name if the input is skipped.
       },
       {
         type: 'input',
@@ -173,7 +173,8 @@ module.exports = class extends Generator {
         )} You can get started by running the commands below.  Have fun!`
       )
     );
-    this.log(`${chalk.green('make setup')}`);
+    this.log(`${chalk.green('make venv')}`);
     this.log(`${chalk.green('source venv/bin/activate')}`);
+    this.log(`${chalk.green('make install')}`);
   }
 };

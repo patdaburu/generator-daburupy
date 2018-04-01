@@ -3,12 +3,6 @@
 PROJ_NAME = <%= projectName %>
 PY_VERSION = <%= pythonVersion %>
 
-setup: venv
-	source source deactivate; venv/bin/activate; make install;
-	@echo
-	@echo To activate the environment, use the following command:
-	@echo     source venv/bin/activate
-
 build:
 	@echo No python build is defined.
 
