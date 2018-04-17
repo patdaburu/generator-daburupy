@@ -91,7 +91,8 @@ module.exports = class extends Generator {
       '.coveragerc',
       '.readthedocs.yml',
       'environment.yml',
-      'bower.json'
+      'bower.json',
+      '.pylintrc'
     ].forEach(
       function(f) {
         this.fs.copyTpl(
